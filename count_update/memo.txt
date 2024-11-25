@@ -1,0 +1,86 @@
+2100226155244
+2100226136700
+2100225799807
+2100226099241
+2100225793089
+2100225647849
+2100223242527
+2100225381385
+2100225645227
+2100225813466
+2100225572516
+2100225548986
+2100224307294
+2100225759191
+2100226053519
+2100226060197
+2100223608965
+2100225276933
+2100226311589
+2100226311671
+2100225759177
+2100225759160
+2100226393295
+2100226311633
+2100226311657
+2100226311640
+2100226311664
+2100226311817
+2100226311824
+2100226311831
+2100226311602
+2100223670597
+
+2重出庫修正 伝票番号:1000238172
+
+=FILTER(
+  IMPORTRANGE("スプレッドシートのURL", "シート名!Y:Y"),
+  IMPORTRANGE("スプレッドシートのURL", "シート名!V:V") = A4,
+  IMPORTRANGE("スプレッドシートのURL", "シート名!W:W") = A2
+)
+
+=FILTER(
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT(202410,B3)!Y:Y"),
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT(202410,B3)!V:V") = A4,
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT(202410,B3)!W:Y") = A2
+)
+
+
+=iferror(FILTER(
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT(202410,B3)!Y:Y"),
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT(202410,B3)!V:V") = $A4,
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT(202410,B3)!W:W") = $A$2
+),0)
+
+=iferror(FILTER(
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT("202410",B3)!Y:Y"),
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT("202410",B3)!V:V") = $A4,
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "CONCAT("202410",B3)!W:W") =$A$2,
+),"")
+
+=iferror(FILTER(
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", CONCAT("Sheet_", 202410, B3, "!Y:Y")),
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", CONCAT("Sheet_", 202410, B3, "!V:V")) = $A4,
+  IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", CONCAT("Sheet_", 202410, B3, "!W:W")) =$A$2,
+),"")
+
+
+=IFERROR(
+  FILTER(
+    IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "Sheet_" & 202410 & SUBSTITUTE(A56:L56,"一括出品入力個人平均","入力(一括)") & "!Y:Y"),
+    IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "Sheet_" & 202410 & A56 & "!V:V") = $A59,
+    IMPORTRANGE("https://docs.google.com/spreadsheets/com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "Sheet_" & 202410 & B3 & "!W:W") =A56
+  ),
+  ""
+)
+
+=IFERROR(
+  FILTER(
+    IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "Sheet_" & 202410 & SUBSTITUTE(A56:L56,"一括出品入力個人平均","入力(一括)") & "!Y:Y"),
+    IMPORTRANGE("https://docs.google.com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "Sheet_" & 202410 &SUBSTITUTE(A56:L56,"一括出品入力個人平均","入力(一括)") & "!V:V") = $A59,
+    IMPORTRANGE("https://docs.google.com/spreadsheets/com/spreadsheets/d/1x8hacRbketI5ZnQn2v39sy5FJ2XkAfY6IdRLsB79bY0/edit?gid=753298240#gid=753298240", "Sheet_" & 202410 & B3 & "!W:W") =SUBSTITUTE(A56:L56,"一括出品入力個人平均","入力(一括)")
+  ),
+  ""
+)
+
+QUERY関数

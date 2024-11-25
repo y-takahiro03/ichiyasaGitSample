@@ -1,0 +1,90 @@
+テスト用
+localStorage.setItem('product_data',JSON.stringify({employee_id: "横山孝大",product_no: "2100225677206",time_stamp:'2024/10/29 15:45:50'}));
+
+saveProductで出来るか　→　mian()の中からsaveProductだけを使えば動く。                                  
+saveProduct("横山孝大", "2100225677233", "2024/10/30 15:45:50");                                                       
+
+現状 変更を確認するボタン上だけで反応する
+    →どちらを押しても加算されるようになった。
+
+階層が分かれたCSSファイルを読み込むことが出来るか確認する
+    →出来る manifest.jsonに追記する必要がある。
+    "content_scripts" : {
+        "matches": [],
+        "js":[path],
+        "css":[path]
+    }
+    
+
+
+次の時間にまたいだ場合のカウントをどうするか
+    →編集画面をつくる
+	商品名と時間を表示する
+	編集ボタンを用意する　
+	編集ボタンを押したときに、よくある時間を簡単に選べるリストで時間を選ぶ
+	最後に確認ボタンを押して、更新をする
+
+    ⏱のアイコンを押したら編集画面を表示するようにする。
+
+<button>←前の時間</button>
+現在の時間を表示
+<button>次の時間→</button>
+<table>
+  <tr>
+  <th>作業者</th>
+  <th>商品番号</th>
+  <th>保存時間</th>
+  </tr>
+  <tr>
+    <td>作業者データ</td>
+    <td>商品番号データ</td>
+    <td>保存時間データ</td>
+    <>時間表示を変更するプルダウンリスト</>
+  </tr>
+  <tr>
+    <td>作業者データ</td>
+    <td>商品番号データ</td>
+    <td>保存時間データ</td>
+    <>時間表示を変更するプルダウンリスト</>
+  </tr>
+</table>
+<button>保存する</button>
+
+
+実施者 
+
+
+編集画面のリンクもあると便利？
+https://world-switch.com/okoku/admin/products/product.php?product_id=209266&mode=pre_edit
+
+
+
+保存したデータを表示できるようにする
+ → OK
+
+スタイルをつけよう
+ → OK
+
+各要素に対して値をつけていこう #1 No.
+  → OK
+各要素に対して値をつけていこう #2 修正時間
+  → OK
+
+No.を連番にできるようにしよう
+  → OK
+
+修正時間を元の保存時間と一時間前の時間だけ選択できるようにしよう
+  → OK
+
+保存して修正時間を更新できるようにしよう
+ → OK
+
+あとで調べる
+   // オプションを昇順に並び替え
+    option.sort((a, b) => parseInt(a.value, 10) - parseInt(b.value, 10));
+
+後置インクリメント 処理の順番、初歩的なことを忘れていた
+ // No.
+    const tdNo = document.createElement("td");
+    tdNo.textContent = rowCounter++
+    row.appendChild(tdNo);

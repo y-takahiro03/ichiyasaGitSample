@@ -1,0 +1,54 @@
+.timeRange {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+button {
+  margin: 1rem;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table th {
+  border-bottom: solid 2px #fb5144;
+  padding: 10px 0;
+}
+
+table td {
+  border-bottom: solid 2px #ddd;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* 保存ボタン */
+.storedButton {
+  display: block;
+  margin: 0.5rem;
+  margin-left: auto;
+  background-color: white;
+  border-color: #bf3228;
+  border-radius: 5px;
+}
+
+/* 編集画面全体 */
+.edit-div {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 80%;
+  min-width: 300px;
+  min-height: 200px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-table {
+  width: 100%;
+  border-spacing: 0;
+}
