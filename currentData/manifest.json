@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "count",
+  "version": "3.0",
+  "description": "商品を編集した際、カウントします。",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content_edit.js"],
+      "matches": ["https://world-switch.com/okoku/admin/products/*"],
+      "css" :["scripts/styles.css"]
+    }
+  ]
+}
